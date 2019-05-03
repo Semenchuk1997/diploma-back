@@ -2,7 +2,7 @@ const express = require('express'),
     app = express();
 
 app.get('/', (req, res) => {
-  res.send('HEY!')
+  res.send('Fuck you!')
 })
 
 app.listen(3000, () => console.log('Server running on port 3000'))
