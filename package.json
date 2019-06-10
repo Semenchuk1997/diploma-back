@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Semenchuk1997/diploma-back#readme",
   "dependencies": {
+    "aws-sdk": "^2.471.0",
     "express": "^4.16.4"
   },
   "devDependencies": {
