@@ -28,8 +28,8 @@ const fetchData = function () {
 }
 
 app.get('/', (req, res) => {
-    fetchData();
-    res.send('Fuck you!')
+    const data = fetchData();
+    res.send(data);
 })
 
 app.listen(3000, () => console.log('Server running on port 3000'))
