@@ -35,10 +35,6 @@ function fetchData(callback){
     return response;
 }
 
-app.get('/test', (req, res) => {
-    res.send('Fuck');
-});
-
 app.get('/', (req, res) => {
     fetchData(function(data) {
         const { Items } = data;
