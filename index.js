@@ -3,8 +3,8 @@ const AWS = require('aws-sdk');
 const awsConfig = {
     "region": "us-east-1",
     "endpoint": "http://dynamodb.us-east-1.amazonaws.com",
-    "accessKeyId": "AKIAIEUKV2FDQG6UES3A",
-    "secretAccessKey": "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"
+    "accessKeyId": "AKIAJOYJUEOFJUTQZN4Q",
+    "secretAccessKey": "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"
 };
 const cors = require('cors');
 const app = express();
@@ -46,4 +46,4 @@ app.get('/', (req, res) => {
     });
 })
 
-app.listen(3000, () => console.log('Server running on port 3000'))
+app.listen(5000, () => console.log('Server running on port 5000'))
