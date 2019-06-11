@@ -38,15 +38,10 @@ function fetchData(callback){
 
 
 app.get('/', (req, res) => {
-<<<<<<< HEAD
     fetchData(function(data) {
         const { Items } = data;
         res.send(Items);
     });
-=======
-    fetchData();
-    res.send('Fuck you!')
->>>>>>> parent of 6d04240... commit
 })
 
 app.listen(4000, () => console.log('Server running on port 4000'))
