@@ -38,7 +38,8 @@ function fetchData(callback){
 app.get('/', (req, res) => {
     fetchData(function(data) {
         const { Items } = data;
-        res.send(Items);
+        const responseData = { thumbnailUrl: Items.thumbnailUrl[0], mp4Url: Items.mp4Urls[0] }
+        res.send(responseData);
     });
 })
 
