@@ -27,7 +27,7 @@ const fetchData = function () {
     });
 }
 
-app.get('/gallery', (req, res) => {
+app.get('/', (req, res) => {
     fetchData();
     res.send('Fuck you!')
 })
