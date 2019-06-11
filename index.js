@@ -11,38 +11,36 @@ const app = express();
 
 app.use(cors())
 
-// AWS.config.update(awsConfig);
+AWS.config.update(awsConfig);
 
-// const docClient = new AWS.DynamoDB.DocumentClient();
+const docClient = new AWS.DynamoDB.DocumentClient();
 
-// function fetchData(callback){
-//     let response;
+function fetchData(callback){
+    let response;
 
-//     const scanningParams = {
-//         TableName: 'VideoOnDemand',
-//         Limit: 100
-//     };
+    const scanningParams = {
+        TableName: 'VideoOnDemand',
+        Limit: 100
+    };
 
-//     docClient.scan(scanningParams, function(err, data) {
-//         if (err) {
-//             console.log('Error: ' +  JSON.stringify(err, null, 2));
-//         } else {
-//             console.log('Success: ' +  JSON.stringify(data, null, 2))
-//             callback(data);
-//         }
-//     });
+    docClient.scan(scanningParams, function(err, data) {
+        if (err) {
+            console.log('Error: ' +  JSON.stringify(err, null, 2));
+        } else {
+            console.log('Success: ' +  JSON.stringify(data, null, 2))
+            callback(data);
+        }
+    });
 
-//     return response;
-// }
+    return response;
+}
 
 
 app.get('/', (req, res) => {
-    // fetchData(function(data) {
-    //     const { Items } = data;
-    //     res.send(Items);
-    // });
-
-    res.send('Fuck');
+    fetchData(function(data) {
+        const { Items } = data;
+        res.send(Items);
+    });
 })
 
 app.listen(3000, () => console.log('Server running on port 3000'))
