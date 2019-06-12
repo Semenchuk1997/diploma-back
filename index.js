@@ -38,7 +38,12 @@ function fetchData(callback){
 app.get('/', (req, res) => {
     fetchData(function(data) {
         const { Items } = data;
-        const responseData = Items.map(item => ({ thumbnailUrl: item.thumbnailUrl[0], mp4Url: item.mp4Urls[0] }));
+        const responseData = Items.filter(item => item.workflowStatus === 'Complete').map(item => ({
+            thumbnailUrl: item.thumbNailUrl ?
+                item.thumbNailUrl[0] :
+                'https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fen.contentandeventstudio.com%2Fwp-content%2Fuploads%2F2016%2F08%2Fvideo-icon.jpg&f=1',
+            mp4Url: item.mp4Urls[0]
+        }));
 
         res.send(responseData);
     });
