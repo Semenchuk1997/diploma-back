@@ -3,8 +3,8 @@ const AWS = require('aws-sdk');
 const awsConfig = {
     "region": "us-east-1",
     "endpoint": "http://dynamodb.us-east-1.amazonaws.com",
-    "accessKeyId": "AKIAJAVELIYZOXG25QAQ",
-    "secretAccessKey": "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"
+    "accessKeyId": "AKIAJOXQ7PB2TFA6CFVQ",
+    "secretAccessKey": "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"
 };
 const cors = require('cors');
 const app = express();
