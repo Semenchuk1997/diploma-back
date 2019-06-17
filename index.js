@@ -1,12 +1,9 @@
 const express = require('express');
 const AWS = require('aws-sdk');
-const awsConfig = {
-    "region": "us-east-1",
-    "endpoint": "http://dynamodb.us-east-1.amazonaws.com",
-    "accessKeyId": "AKIAJOXQ7PB2TFA6CFVQ",
-    "secretAccessKey": "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"
-};
 const cors = require('cors');
+
+const { awsConfig } = require('./config');
+
 const app = express();
 
 app.use(cors())
@@ -27,7 +24,6 @@ function fetchData(callback){
         if (err) {
             console.log('Error: ' +  JSON.stringify(err, null, 2));
         } else {
-            console.log('Success: ' +  JSON.stringify(data, null, 2))
             callback(data);
         }
     });
